@@ -5,6 +5,7 @@ namespace mespinosaz\Pricing\Tests;
 use mespinosaz\Pricing\Price;
 use mespinosaz\Pricing\Vat;
 use mespinosaz\Pricing\Currency;
+use mespinosaz\Pricing\Currency\CurrencyMapper;
 
 class PriceTest extends \PHPUnit_Framework_TestCase
 {
@@ -33,7 +34,9 @@ class PriceTest extends \PHPUnit_Framework_TestCase
     {
         $quantity = 12.33;
         $vatQuantity = 21;
-        $price = new Price($quantity, new Currency\Euro());
+        $currencyMapper = new CurrencyMapper();
+        $currency = $currencyMapper->map('EUR');
+        $price = new Price($quantity, $currency);
         $vat = new Vat($vatQuantity);
         $price->addVat($vat);
         $expectedNet = $quantity;

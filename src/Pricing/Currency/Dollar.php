@@ -2,7 +2,7 @@
 
 namespace mespinosaz\Pricing\Currency;
 
-class Euro extends AbstractCurrency
+class Dollar extends AbstractCurrency
 {
     const DECIMAL_PRECISION = 2;
 

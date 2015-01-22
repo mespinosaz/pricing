@@ -18,13 +18,13 @@ class Price
 
     public function getGrossValue()
     {
-        $value = $this->getNetValue()+$this->getVatValue();
+        $value = $this->value+$this->getVatValue();
         return $this->currency->formatNumber($value);
     }
 
     public function getNetValue()
     {
-        return $this->value;
+        return $this->currency->formatNumber($this->value);
     }
 
     public function addVat(Vat $vat)

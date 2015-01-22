@@ -10,7 +10,7 @@ class Price
     public function __construct($value, Currency\CurrencyInterface $currency = null)
     {
         $this->value = $value;
-        $this->currency = new Currency\Null();
+        $this->currency = new Currency\Currency();
         if ($currency) {
             $this->currency = $currency;
         }

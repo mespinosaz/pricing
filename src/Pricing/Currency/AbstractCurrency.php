@@ -6,6 +6,11 @@ abstract class AbstractCurrency implements CurrencyInterface
 {
     protected function getPrecision()
     {
-        return static::DECIMAL_PRECISION;
+        return $this->precision;
+    }
+
+    public function formatNumber($number)
+    {
+        return round($number, $this->getPrecision());
     }
 }

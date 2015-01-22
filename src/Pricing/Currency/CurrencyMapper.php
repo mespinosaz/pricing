@@ -22,7 +22,7 @@ class CurrencyMapper
         $isoCode = $this->normalizeIsoCode($isoCode);
 
         if (empty($this->map[$isoCode])) {
-            return new Null();
+            return new Currency();
         }
 
         return $this->map[$isoCode];
